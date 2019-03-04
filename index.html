@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Amos Task Board</title>
+    <title>To Do List</title>
 
     <!--Jquery for bootstrap-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -15,23 +15,52 @@
     <!--Custom css and JS-->
     <link rel="stylesheet" href="main.css">
     <script src="main.js"> </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 
 
-<body>
+<body background="images/backgroundshaam.jpg">
     <div class="container">
-        <h1>Amos Task Board</h1>
+        <h1> To Do List </h1>
     </div>
     <div class="container">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
+        <div class="col-6 center">
+            <form>
+                <div class="form-group ">
+                    <label for="txtNote">New Note:</label>
+                    <textarea class="form-control notebookbg" id="txtNote" rows="3"></textarea>
+                </div>
+                <!--
+                <div class="form-group">
+                    <label for="example-datetime-local-input">Date and time</label>
+                    <div>
+                        <input class="form-control" type="datetime-local" id="example-datetime-local-input" data-date-format="dd/mm/yyyy">
+                    </div>
+                </div>
+                -->
+                 <div class="form-group">
+                    <label class="control-label">Date and time</label>
+                    <div class='input-group date' id='datetimepicker1'>
+                       <input type='text' class="form-control" id="example-datetime-local-input" />
+                       <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                       </span>
+                    </div>
+                 </div>
+                <button type="button" class="btn btn-primary col-4" onclick="addNewNote()">Create Note</button>
+                <button class="btn btn-danger col-4" type="reset">Reset</button>
+            </form>
         </div>
+    </div>
+    <hr class="col-xs-12">
+    <div id="notesContainer" class="container">
+        
     </div>      
 </body>
 </html>
